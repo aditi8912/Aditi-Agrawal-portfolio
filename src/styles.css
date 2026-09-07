@@ -89,5 +89,80 @@
 .strength-grid article:nth-child(2):after{background:var(--pink)}.strength-grid article:nth-child(3):after{background:var(--orange)}.strength-grid article:nth-child(4):after{background:var(--purple)}
 .strength-grid article:hover:after{transform:scale(1.7)}
 
-@media(max-width:950px){.nav-wrap{justify-content:flex-end}.profile-layout{grid-template-columns:1fr}.profile-board{max-width:700px}.talk{display:none}.experience-row{padding-left:55px}.timeline:before{left:17px}}
-@media(max-width:700px){.topbar{height:72px;padding:0 6vw}.nav-wrap{position:static}.nav{position:absolute;left:0;right:0;top:72px;margin:0;border-radius:0;padding:15px 6vw;gap:3px;background:rgba(248,245,240,.98);box-shadow:0 15px 30px rgba(30,20,40,.08)}.nav button{padding:12px 14px}.wordmark{font-size:18px}.top-actions{margin-left:auto}.profile-section{padding-top:85px}.profile-layout{margin-top:40px;gap:45px}.profile-copy h2{font-size:50px}.profile-copy p{font-size:14px}.profile-board{padding:18px;border-radius:22px}.board-lines>div{grid-template-columns:24px 74px 1fr}.board-core{padding:25px 0}.core-initials{width:55px;height:55px}.experience-row{padding:30px 12px 30px 48px}.experience-row:hover{transform:none}.exp-index{left:0}.experience-row:before{left:8px}.timeline:before{left:14px}.project:hover{padding-left:10px}.hero-visual:after{display:none}}
+@media(max-width:950px){
+  .nav-wrap{justify-content:flex-end}
+  .profile-layout{grid-template-columns:1fr}
+  .profile-board{max-width:700px}
+  .talk{display:none}
+
+  .experience-row{
+    grid-template-columns:40px 1fr;
+    gap:16px;
+    padding:34px 20px 34px 55px;
+  }
+
+  .experience-row p{
+    grid-column:2;
+    max-width:100%;
+    margin-top:14px;
+  }
+
+  .timeline:before{
+    left:17px;
+  }
+}
+.experience-row{
+  grid-template-columns:1fr;
+  gap:0;
+  padding:30px 8px 30px 48px;
+}
+
+.experience-row:hover{
+  transform:none;
+}
+
+.exp-index{
+  left:0;
+  top:33px;
+}
+
+.experience-row:before{
+  left:8px;
+  top:38px;
+}
+
+.timeline:before{
+  left:14px;
+}
+
+.exp-main{
+  min-width:0;
+}
+
+.exp-main h3{
+  font-size:34px;
+  line-height:1.02;
+  max-width:100%;
+  overflow-wrap:anywhere;
+  word-break:break-word;
+  margin-bottom:10px;
+}
+
+.role{
+  display:block;
+  margin-bottom:6px;
+}
+
+.exp-period{
+  display:block;
+  margin-top:0;
+  margin-bottom:18px;
+}
+
+.experience-row p{
+  grid-column:auto;
+  max-width:100%;
+  margin:0;
+  font-size:13px;
+  line-height:1.75;
+}
