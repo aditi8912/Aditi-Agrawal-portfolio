@@ -125,7 +125,6 @@
   left:0;
   top:33px;
 }
-
 .experience-row:before{
   left:8px;
   top:38px;
@@ -165,4 +164,200 @@
   margin:0;
   font-size:13px;
   line-height:1.75;
+}
+/* =========================================================
+   MOBILE UX FIXES
+   ========================================================= */
+
+@media(max-width:700px){
+  .experience-row{
+    grid-template-columns:1fr;
+    gap:0;
+    padding:30px 8px 30px 48px;
+  }
+
+  .experience-row:hover{
+    transform:none;
+  }
+
+  .exp-index{
+    left:0;
+    top:33px;
+  }
+
+  .experience-row:before{
+    left:8px;
+    top:38px;
+  }
+
+  .timeline:before{
+    left:14px;
+  }
+
+  .exp-main{
+    min-width:0;
+  }
+
+  .exp-main h3{
+    font-size:34px;
+    line-height:1.02;
+    max-width:100%;
+    overflow-wrap:anywhere;
+    word-break:break-word;
+    margin-bottom:10px;
+  }
+
+  .role{
+    display:block;
+    margin-bottom:6px;
+  }
+
+  .exp-period{
+    display:block;
+    margin-top:0;
+    margin-bottom:18px;
+  }
+
+  .experience-row p{
+    grid-column:auto;
+    max-width:100%;
+    margin:0;
+    font-size:13px;
+    line-height:1.75;
+  }
+
+  /* Keep mobile header above everything */
+  .topbar{
+    z-index:80;
+  }
+
+  .nav-wrap{
+    position:static;
+  }
+
+  /* Proper mobile dropdown */
+  .nav{
+    position:fixed;
+    top:72px;
+    left:12px;
+    right:12px;
+
+    margin:0;
+    display:none;
+    flex-direction:column;
+    gap:0;
+
+    padding:8px;
+
+    border:1px solid #d8d1c7;
+    border-radius:18px;
+
+    background:rgba(248,245,240,.99);
+
+    box-shadow:0 20px 45px rgba(30,20,40,.16);
+
+    z-index:100;
+  }
+
+  /* Only show when hamburger is clicked */
+  .nav.open{
+    display:flex;
+  }
+
+  .nav button{
+    width:100%;
+    padding:13px 14px;
+
+    border-radius:11px;
+
+    text-align:left;
+    font-size:13px;
+  }
+
+  .nav button+button{
+    border-top:1px solid #e5dfd7;
+    border-radius:0 0 11px 11px;
+  }
+
+  .nav button:hover{
+    background:#ece6ff;
+  }
+
+
+  /* =====================================================
+     PROJECT MODAL
+     ===================================================== */
+
+  .modal-backdrop{
+    padding:12px;
+
+    overflow:hidden;
+    overscroll-behavior:contain;
+
+    /* Don't allow touch scrolling on the backdrop */
+    touch-action:none;
+  }
+
+  .modal{
+    width:min(100%,940px);
+
+    max-height:calc(100dvh - 24px);
+    height:auto;
+
+    overflow-y:auto;
+    overflow-x:hidden;
+
+    overscroll-behavior:contain;
+
+    -webkit-overflow-scrolling:touch;
+
+    /* Modal itself can scroll vertically */
+    touch-action:pan-y;
+
+    padding:58px 20px 28px;
+
+    border-radius:18px;
+  }
+
+  .modal h2{
+    font-size:clamp(38px,12vw,56px);
+
+    line-height:.94;
+
+    overflow-wrap:anywhere;
+    word-break:break-word;
+
+    padding-right:20px;
+  }
+
+  .modal-overview{
+    font-size:14px;
+    line-height:1.75;
+  }
+
+  .detail-grid{
+    grid-template-columns:1fr;
+    gap:0;
+  }
+
+  .detail-block{
+    padding-top:20px;
+    margin-top:22px;
+  }
+
+  .modal-actions{
+    padding-bottom:8px;
+  }
+
+  .modal-close{
+    position:absolute;
+    right:14px;
+    top:14px;
+    z-index:5;
+  }
+
+  .modal-number{
+    right:68px;
+    top:22px;
+  }
 }

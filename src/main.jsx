@@ -138,21 +138,58 @@ function App() {
   const [agentMode, setAgentMode] = useState("explore");
   const [generating, setGenerating] = useState(false);
 
-  useEffect(() => {
-    const nodes = document.querySelectorAll(".reveal-on-scroll");
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add("is-visible");
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.14 });
-    nodes.forEach((node) => observer.observe(node));
-    return () => observer.disconnect();
-  }, []);
+    useEffect(() => {
+      const nodes = document.querySelectorAll(".reveal-on-scroll");
 
-  const go = (id) => { document.getElementById(id)?.scrollIntoView({ behavior: "smooth" }); setMenu(false); };
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.14 });
+
+      nodes.forEach((node) => observer.observe(node));
+
+      return () => observer.disconnect();
+    }, []);
+
+    // Lock the website behind mobile menu and project case-study modal
+    useEffect(() => {
+      const locked = Boolean(selected || menu);
+
+      document.body.style.overflow = locked ? "hidden" : "";
+
+      return () => {
+        document.body.style.overflow = "";
+      };
+    }, [selected, menu]);
+
+  // Escape closes the open menu/modal
+  useEffect(() => {
+    const onKeyDown = (event) => {
+      if (event.key === "Escape") {
+        if (selected) setSelected(null);
+        if (menu) setMenu(false);
+      }
+    };
+
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, [selected, menu]);
+
+  const go = (id) => {
+    document
+      .getElementById(id)
+      ?.scrollIntoView({
+        behavior: "smooth",
+        block: "start"
+      });
+
+    setMenu(false);
+  };
 
   const roleScore = useMemo(() => ({
     "AI / ML": 92,
