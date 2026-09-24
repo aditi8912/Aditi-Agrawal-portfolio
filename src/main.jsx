@@ -104,6 +104,7 @@ const projects = [
     ],
     outcome: "The project automates the analysis phase of a penetration test, turning messy scan data into a clear, ranked security report — built defensively, with passive-only analysis and a required authorization step.",
     stack: "Python · Streamlit · Rule-Based Engine · OWASP/CWE · Security",
+    github: "https://github.com/aditi8912/Outpost-Scanner",
     link: "https://outpost-scanner-3xjy4vawz9imp9ywlclo88.streamlit.app/",
     color: "violet",
     icon: Shield
