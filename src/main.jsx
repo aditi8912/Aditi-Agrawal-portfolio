@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useState } from "react";
 import { createRoot } from "react-dom/client";
-import { ArrowUpRight, Github, Linkedin, Mail, Menu, X, ExternalLink, Sparkles, Send, FileText, Brain, BarChart3, Code2, FlaskConical, Database, Wand2, Bot, Target, Download, ChevronRight } from "lucide-react";
+import { ArrowUpRight, Github, Linkedin, Mail, Menu, X, ExternalLink, Sparkles, Send, FileText, Brain, BarChart3, Code2, FlaskConical, Database, Wand2, Bot, Target, Download, ChevronRight, Shield } from "lucide-react";
 import "./styles.css";
 
 const profile = {
@@ -10,6 +10,7 @@ const profile = {
   linkedin: "https://linkedin.com/in/aditi-agrawal-98b3b1331",
   github: "https://github.com/aditi8912",
   clause: "https://clauseai-o2kybfnlzzrhbn5atbqqje.streamlit.app/",
+  outpost: "https://outpost-scanner-3xjy4vawz9imp9ywlclo88.streamlit.app/",
   resume: "/resume.pdf"
 };
 
@@ -86,7 +87,27 @@ const projects = [
     stack: "Arduino · C++ · IoT · Tinkercad · Sensors · Embedded Logic",
     color: "lime",
     icon: Database
-  }
+  },
+  {
+    n: "05",
+    title: "Outpost",
+    category: "CYBERSECURITY · SECURITY ANALYSIS",
+    short: "A defensive security analysis tool that turns raw reconnaissance data into prioritized vulnerability findings and actionable remediation guidance.",
+    overview: "Outpost addresses a practical security problem: scanning tools like Nmap can produce walls of raw technical output, but understanding what actually matters often requires expert analysis. The tool turns reconnaissance data — pasted scan output or a single authorized HTTP header check — into a prioritized, scored vulnerability report, identifying weaknesses, ranking them by severity, and recommending a fix for each.",
+    approach: [
+      "HTTP reconnaissance and response-header analysis",
+      "Rule-based vulnerability detection across 7 risk categories",
+      "OWASP Top 10 and CWE finding classification",
+      "Severity-weighted scoring and A–F risk grading",
+      "Full-stack build with a Python backend and interactive UI",
+      "Streamlit deployment for an end-to-end user workflow"
+    ],
+    outcome: "The project automates the analysis phase of a penetration test, turning messy scan data into a clear, ranked security report — built defensively, with passive-only analysis and a required authorization step.",
+    stack: "Python · Streamlit · Rule-Based Engine · OWASP/CWE · Security",
+    link: "https://outpost-scanner-3xjy4vawz9imp9ywlclo88.streamlit.app/",
+    color: "violet",
+    icon: Shield
+  },
 ];
 
 const focus = [
